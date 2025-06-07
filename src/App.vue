@@ -45,7 +45,7 @@ export default {
   provide() {
     return {
       products: this.products,
-      cart: this.cart,
+
       addProductToCart: this.addProductToCart,
       removeProductFromCart: this.removeProductFromCart,
       login: this.login,

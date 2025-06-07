@@ -3,7 +3,7 @@ import rootMutations from './mutations';
 import rootActions from './actions';
 import rootGetters from './getters';
 import authModule from './auth/index';
-import cartModule from './modules/cart';
+import cartModule from './cart/index';
 import productsModule from './modules/products';
 const store = createStore({
   modules: {

@@ -10,7 +10,7 @@
         </li>
         <li>
           <router-link to="/cart">Cart</router-link>
-          <base-badge mode="elegant">{{ cart.qty }}</base-badge>
+          <base-badge mode="elegant">{{ cartQty }}</base-badge>
         </li>
         <li v-if="isAuth">
           <router-link to="/admin">Admin</router-link>
@@ -30,7 +30,15 @@ export default {
     isAuth() {
       return this.$store.getters['auth/userIsAuthenticated'];
     },
+    cartQty() {
+      let result = this.$store.getters['cart/getQty'];
+      console.log('hey', result);
+      console.log(Object.keys(this.$store.getters));
+
+      return result;
+    },
   },
+  getters: {},
   methods: {
     login() {
       this.$store.dispatch('auth/login', { isAuth: true });
@@ -39,7 +47,7 @@ export default {
       this.$store.dispatch('auth/logout', { isAuth: false });
     },
   },
-  inject: ['cart'],
+  // inject: ['cart'],
 };
 </script>
 
